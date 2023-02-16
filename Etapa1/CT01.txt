@@ -1,0 +1,147 @@
+Validação da versão 0.1.12
+QA responsável Igor Fernandes Gonçalves
+
+	Número	 Título
+TC	1	     Validar estoque
+TC	2	     Validar entrada no estoque
+TC	3	     Validar venda
+TC	4	     Validar adição ao carrinho
+TC	5	     Validar retirada do carrinho
+TC	6	     Validar cadastro do cliente
+TC	7	     Validar tela de login
+TC	8	     Validar página de produtos
+TC	9	     Validar índice da página
+TC	10	     Validar envio de email após compra
+TC	11	     Validar cancelamento
+TC	12	     Validar envio de email de cancelamento
+TC	13	     Validar estorno
+TC	14	     Validar barra de pesquisa
+TC	15	     Validar sugestões
+
+TC1 Validar estoque
+1. Entrar no sistema como administrador
+2. Verificar se a quantidade de produtos no sistema corresponder a quantidade de produtos em estoque
+3. Entrar no sistema como usuário
+4. Verificar no sistama se o produto com quantidade > 0 está disponível para compra
+
+TC2 Validar entrada no estoque
+1. Entrar no sistema como administrador
+2. Adicionar produto no sistema
+2. Verificar se a quantidade de produtos no sistema corresponder a quantidade de produtos em estoque
+3. Entrar no sistema como usuário
+4. Verificar no sistama se o produto com quantidade > 0 está disponível para compra
+
+TC3 Validar venda
+1. Entrar no sistema como usuário
+2. Adicionar produto no carrinho
+3. Efetuar compra
+4. Entrar no sistema como administrador
+5. Verificar se a quantidade de produtos diminuiu
+6. Verificar se o valor foi adicionado no caixa
+
+TC4 Validar adição ao carrinho
+1. Entrar no sistema como usuário
+2. Adicionar produto no carrinho
+3. Entrar na seção de carrinho
+4. Verificar se produto foi adicionado
+
+TC5 Validar retirada do carrinho
+1. Entrar no sistema como usuário
+2. Adicionar produto no carrinho
+3. Entrar na seção de carrinho
+4. Verificar se produto foi adicionado
+5. Remover produto do carrinho
+6. Verificar se produto foi removido
+
+TC6 Validar cadastro do cliente
+1. Entrar na página de login
+2. Fazer o processo de criação de conta
+3. Verificar se conta foi cadastrada no banco de dados
+4. Tentar fazer o login na conta
+
+TC7 Validar tela de login
+1. Validar o campo login
+2. Validar o campo senha
+3. Validar o campo crie sua conta
+4. Validar o campo esqueci a senha
+5. Validar o campo Entrar
+6. Validar o campo entre com rede social
+
+TC8 Validar página de produtos
+1. Entrar no sistema como usuário
+2. Verificar produto da home
+3. Realizar um filtro
+4. Verificar produtos após o filtro
+
+TC9 Validar índice da página
+1. Entrar no sistema como usuário
+2. Mudar o indice da página
+3. Verificar se produtos foram atualizados
+
+TC10 Validar envio de email após compra
+1. Entrar no sistema como usuário
+2. Fazer o processo de compra de produto
+3. Verificar caixa de email do usuário
+
+TC11 Validar cancelamento
+1. Entrar no sistema como usuário
+2. Fazer o processo de compra de produto
+3. Entrar na página de pedidos
+4. Solicitar o cancelamento do pedido
+
+TC12 Validar envio de email de cancelamento
+1. Entrar no sistema como usuário
+2. Fazer o processo de compra de produto
+3. Entrar na página de pedidos
+4. Solicitar o cancelamento do pedido
+5. Verificar caixa de email do usuário
+
+TC13 Validar estorno
+1. Entrar no sistema como usuário
+2. Fazer o processo de compra de produto
+3. Entrar na página de pedidos
+4. Solicitar o cancelamento do pedido
+5. Entrar no sistema como administrador
+6. Verificar se o valor do pedido foi estornado
+
+TC14 Validar barra de pesquisa
+1. Entrar no sistema como usuário
+2. No filtro, informar um produto
+3. Verificar se após o filtro, somente os produtos com nome relacionados ao filtro estão sendo exibidos
+
+TC15 Validar sugestões
+1. Entrar no sistema como usuário
+2. Verificar a sessão de sugestões
+3. Entrar em um produto
+4. Verificar a sessão de sugestões, no final da página
+
+TC16 Verificar armazenamento da sessão
+1. Entrar no sistema como usuário
+2. Adicionar produto ao carrinho
+3. Verificar página do carrinho
+4. Fazer logout do sistema
+5. Entrar novamente no sistema como usuário
+6. Entrar na página do carrinho
+7. Verificar se a os dados do carrinho não se perderam ao deslogar
+
+Usar o template para reportar erros:
+
+Título
+Sessão do carrinho se perde ao fazer logout
+
+Como reproduzir
+1. Entrar no sistema como usuário
+2. Adicionar produto no carrinho
+3. Verificar página do carrinho
+4. Fazer o processo de logout do sistema
+5. Entrar novamente com o mesmo usuário
+6. Verificar página do carrinho
+
+Resultado esperado
+O sistema deveria manter a sessão do usuário, armazenando os dados do carrinho, mesmo se o usuário se deslogar do sistema.
+
+Resultado obtido
+O sistema não salvou a sessão do usuário, limpando o carrinho do mesmo ao fazer logout.
+
+Parecer técnico:
+Após execução das validações na versão 0.1.12, o time de qualidade validou 16 cenários, 15 deles foram validados com sucesso, e 1 não passou na validação, gerando 1 bug.
