@@ -1,7 +1,7 @@
 import requests
 import json
 
-#API URL
+# API URL
 url = "https://serverest.dev/usuarios"
 file = open('C:\\Workspace\\Desafios\\Bemol\\Etapa4\\api_Automation\\createUser.json', 'r')
 json_input = file.read()
@@ -12,7 +12,3 @@ postResponse = requests.post(url, request_json)
 print(postResponse.content)
 
 assert postResponse.status_code == 201
-
-# Make GET request
-getResponse = requests.get(url)
-print(getResponse.content)
