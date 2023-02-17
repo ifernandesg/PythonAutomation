@@ -5,6 +5,8 @@
 - [Selenium Chrome Web Driver][4] ChromeDriver 110.0.5481.77
 
 # How to run
+- Run these commands to install requests and jsonpath in a terminal with python 3.11 installed:
+    - `pip install -U requests` `pip install -U jsonpath`
 - To run the web automation tests you have to change the PATH variable in etapa2.py and etapa3.py to the location where the chrome webdriver is located, a chrome webdriver to Google Chrome v110 is already located within this repository
 - To run etapa2.py you either open the file and run it manually with the support of an IDE tool such as VSCode, or run the command line in a terminal inside the Etapa2 folder: `.\etapa2.py`
 - To run etapa3.py you either open the file and run it manually with the support of an IDE tool such as VSCode, or run the command line in a terminal inside the Etapa3 folder: `.\etapa3.py`
