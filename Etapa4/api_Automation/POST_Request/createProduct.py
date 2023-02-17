@@ -9,7 +9,7 @@ loginCredentialsFileLocation = open('C:\\Workspace\\Desafios\\Bemol\\Etapa4\\api
 jsonLogin_input = loginCredentialsFileLocation.read()
 requestLoginBody = json.loads(jsonLogin_input)
 
-# Product URL
+# Product URL 
 # Change createProductFileLocation path
 productUrl = "https://serverest.dev/produtos"
 createProductFileLocation = open('C:\\Workspace\\Desafios\\Bemol\\Etapa4\\api_Automation\\createProduct.json', 'r')
