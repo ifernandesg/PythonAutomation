@@ -21,6 +21,7 @@ button_search.click()
 
 time.sleep(35)
 
+#Seleciona a ordenação
 select_de_status_xpath = '//*[@id="sorting-selector"]'
 select_de_status = driver.find_element(By.XPATH, select_de_status_xpath)
 Select(select_de_status).select_by_value('6')
@@ -29,29 +30,17 @@ select_de_status.click()
 
 time.sleep(5)
 
-#nome
-#Traz o resultado de outra lista
-# result = driver.find_element(By.CSS_SELECTOR, '.py-1 li')
-# print(result.text)
+#Printa no console o nome, avaliação e valor, respectivamente
+resultName = driver.find_element(By.CSS_SELECTOR, '.py-1 .ItemName_nameWithFav__ijP51')
+print(resultName.text)
 
-result = driver.find_element(By.XPATH, '/html/body/div[1]/div/div[1]/main/div[3]/div[1]/div[3]/div/ol/li[1]/div/article/div[2]/div[1]/section/h2/button')
-print(result.text)
+resultEvaluation = driver.find_element(By.CSS_SELECTOR, '.py-1 .RatingPill_small__L_BAr')
+print(resultEvaluation.text)
 
-# for name in result:
-#     print(name.text)
-# driver.close()
+resultValue = driver.find_element(By.CSS_SELECTOR, '.py-1 .text-xl')
+print(resultValue.text)
 
-# result = driver.find_element(By.CSS_SELECTOR, '.accommodation-list li')
-# for name in result:
-#     print(name.text)
-# driver.close()
 
-#avaliacao
-# nome_xpath = '//*[@id="__next"]/div/div[1]/main/div[3]/div[1]/div[3]/div/ol/li[1]/div/article/div[2]/div[1]/section/h2/button/span'
-# resultado_nome = driver.find_element(By.XPATH, nome_xpath)
-# print (resultado_nome.text)
-#valor
-
-#xpath nome //*[@id="__next"]/div/div[1]/main/div[3]/div[1]/div[3]/div/ol/li[1]/div/article/div[2]/div[1]/section/h2/button
-#xpath avaliacao //*[@id="__next"]/div/div[1]/main/div[3]/div[1]/div[3]/div/ol/li[1]/div/article/div[2]/div[1]/div[3]/button/span[1]/span/span[1]
-#xpath valor //*[@id="__next"]/div/div[1]/main/div[3]/div[1]/div[3]/div/ol/li[1]/div/article/div[2]/div[2]/div[2]/div[1]/div/div/div[2]/strong/span
+# #Salva no arquivo a resposta 
+# with open("response.txt", "a") as f:
+#         f.write(str(response))
