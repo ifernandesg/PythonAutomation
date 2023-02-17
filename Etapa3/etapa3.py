@@ -32,7 +32,7 @@ selectStatus = driver.find_element(By.XPATH, selectStatusXpath)
 Select(selectStatus).select_by_value('6')
 selectStatus.click()
 selectStatus.click()
-time.sleep(5)
+time.sleep(10)
 
 #Print name, evaluation and result of the first result after the filter
 resultNameCssSelector = '.py-1 .ItemName_nameWithFav__ijP51'
