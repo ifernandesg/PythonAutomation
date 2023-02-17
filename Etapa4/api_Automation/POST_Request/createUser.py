@@ -2,13 +2,18 @@ import requests
 import json
 
 # API URL
-url = "https://serverest.dev/usuarios"
-file = open('C:\\Workspace\\Desafios\\Bemol\\Etapa4\\api_Automation\\createUser.json', 'r')
-json_input = file.read()
-request_json = json.loads(json_input)
+# Change createUserFileLocation path
+createUserFileLocation = "C:\\Workspace\\Desafios\\Bemol\\Etapa4\\api_Automation\\createUser.json"
+createUserUrl = "https://serverest.dev/usuarios"
 
-# Make POST request with Json Input body
-postResponse = requests.post(url, request_json)
-print(postResponse.content)
+#Load the json data
+file = open(createUserFileLocation, 'r')
+jsonInput = file.read()
+requestJson = json.loads(jsonInput)
 
-assert postResponse.status_code == 201
+#Create user
+createUser = requests.post(createUserUrl, requestJson)
+print(createUser.content)
+
+# Verify if user is created
+assert createUser.status_code == 201
